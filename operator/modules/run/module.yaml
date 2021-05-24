@@ -1,0 +1,18 @@
+name: run
+version: 1.0
+
+artifacts:
+  - name: rhmi-operator
+    image: builder
+    path: /home/artifact
+  - name: entrypoint
+    path: entrypoint
+    dest: /usr/local/bin/entrypoint
+
+execute:
+  - script: setup.sh
+
+run:
+  user: 1001
+  entrypoint:
+    - /usr/local/bin/entrypoint

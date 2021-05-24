@@ -1,0 +1,9 @@
+name: build
+version: 1.0
+description: "Module used to build the RHOAM operator"
+artifacts:
+  - name: rhoam.zip
+    url: https://github.com/integr8ly/integreatly-operator/archive/refs/heads/master.zip
+execute:
+  - script: "prepare.sh"
+

@@ -1,0 +1,31 @@
+- name: builder
+  version: 1.6.0
+  from: registry.ci.openshift.org/openshift/release:golang-1.16
+  description: Operator builder stage
+
+  modules:
+    repositories:
+      - path: modules
+
+    install:
+      - name: build
+
+- name: managed-api-service-cekit
+  version: 1.0
+  from: registry.access.redhat.com/ubi8/ubi:latest
+  description: Managed API Service Operator
+
+  envs:
+    - name: "OPERATOR"
+      value: /usr/local/bin/rhmi-operator
+    - name: USER_UID
+      value: "1001"
+    - name: USER_NAME
+      value: integreatly-operator
+
+  modules:
+    repositories:
+      - path: modules
+
+    install:
+      - name: run
