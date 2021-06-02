@@ -10,8 +10,8 @@
     install:
       - name: build
 
-- name: managed-api-service-cekit
-  version: 1.0
+- name: rhoams/rhoam-1-rhel-8-operator
+  version: 1.6.0
   from: registry.access.redhat.com/ubi8/ubi:latest
   description: Managed API Service Operator
 
